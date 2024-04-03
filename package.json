@@ -1,0 +1,24 @@
+{
+  "name": "app-planeacion",
+  "version": "1.0.0",
+  "description": "Aplicación area de planeación",
+  "main": "app.js",
+  "author": "Jhonny Ocampo",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.2.4"
+  },
+  "devDependencies": {
+    "csv-parser": "^3.0.0",
+    "nodemon": "^3.1.0",
+    "xlsx": "^0.18.5"
+  }
+}
