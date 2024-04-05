@@ -16,6 +16,8 @@ app.use(express.json())
 
 app.use('/api/v1/datas', DataRouter )
 
+// console.log({ DataRouter })
+
 // app.use(express.static(path.join(__dirname, 'public')))
 
 

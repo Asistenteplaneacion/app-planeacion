@@ -22,7 +22,7 @@ const datosSchema = mongoose.Schema({      //es crear las variables para hacer e
 )
 
 
-const Datos = mongoose.model('Datos', datosSchema) // aca despues de productSchema, colocaria coma y le colocaria nombre, pero si lo dejo asi, el coloca por defecto el nombre de la constante 'Product'
+const Dato = mongoose.model('Dato', datosSchema) // aca despues de productSchema, colocaria coma y le colocaria nombre, pero si lo dejo asi, el coloca por defecto el nombre de la constante 'Product'
 
 
-module.exports = Datos
+module.exports = Dato
