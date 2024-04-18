@@ -1,9 +1,9 @@
-const Data = require('../models/datos')
+const Megas = require('../models/megaModel')
 
 
-const getDatas = async (req, res) => {
+const getMegas = async (req, res) => {
     try {
-        const datas = await Data.aggregate([
+        const datas = await Megas.aggregate([
             {
                 $match: { deleted: false }
             },
@@ -39,7 +39,7 @@ const getDatas = async (req, res) => {
 }
 
 module.exports = {
-    getDatas
+    getMegas
 };
 
 

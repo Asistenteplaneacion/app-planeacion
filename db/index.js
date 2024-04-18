@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
                                            // por defecto ya lo busca, no hace falta colocar la extension .js
 
-
 const dbConnect = (app) =>{
     mongoose.connect(                                                                           // este "stock-app" es el nombre de la base datos que se creara en MongoDB Atlas
     `mongodb+srv://apoyoplaneacion:${process.env.MONGO_DB_PASS}@app-planeacion.mxksqyb.mongodb.net/planeacion-data?retryWrites=true&w=majority&appName=app-planeacion`
