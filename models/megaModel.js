@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 
 const megaSchema = mongoose.Schema({
     nombre: String,
-    perspectivasDelBSC: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PerspectivaBSC' }]
 },
 {timestamps: true}
 );
 
 // Crear los objetos Mega con los nombres específicos
-const Megas = mongoose.model('Megas', megaSchema);
+const Megas = mongoose.model('megas', megaSchema);
 
 const megasData = [
     { nombre: 'Mega 1: Consolidación de las Funciones Sustantivas y las Labores que le tributan, en el marco de su naturaleza e identidad institucional' },

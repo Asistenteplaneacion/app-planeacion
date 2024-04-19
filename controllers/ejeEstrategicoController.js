@@ -1,4 +1,4 @@
-const Perspectiva = require('../models/perspectivaModel')
+const Eje = require('../models/ejeEstrategicoModel');
 
 
 // const getPerspectiva = async (req, res) => {
@@ -38,13 +38,13 @@ const Perspectiva = require('../models/perspectivaModel')
 //     }
 // }
 
-const getPerspectiva = async () => {
-    const perspectiva = await Perspectiva.aggregate(  // (1) Padre --- (Categories)
+const getEje = async () => {
+    const eje = await Eje.aggregate(  // (1) Padre --- (Categories)
         [
             {
                 $lookup:
                 {
-                    from: "megas", // (2) Hijo -- (Publicaciones)
+                    from: "perspectiva", // (2) Hijo -- (Publicaciones)
                     let:{
                         aliasNombreMega: "$nombre" // (1) Nombre de la categoria [ Tech, Salud]   
                     },
@@ -52,19 +52,19 @@ const getPerspectiva = async () => {
                         {
                             $match:{
                                 $expr:{
-                                    $in: [ "$$aliasNombreMega", "$megas",]
+                                    $in: [ "$$aliasNombreMega", "$perspectiva",]
                                 }
                             }
                         }
                     ],
-                    as: 'listaDeMegasEncontradas'
+                    as: 'listaDePerspectivasEncontradas'
                 }
             }
         ]
     )
-    console.log('******** RESULTADOS ******', JSON.stringify(perspectiva));
+    console.log('******** RESULTADOS ******', JSON.stringify(eje));
 }
 
 module.exports = {
-    getPerspectiva
+    getEje
 };
