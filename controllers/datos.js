@@ -1,71 +1,36 @@
 const Megas = require('../models/megaModel')
 
-
-// const getMegas = async (req, res) => {
-//     try {
-//         const datas = await Megas.aggregate([
-//             {
-//                 $match: { deleted: false }
-//             },
-//             {
-//                 $sort: { _id: -1 }
-//             },
-//             {
-//                 $limit: 10
-//             },
-//             {
-//                 $group: {
-//                     _id: '$_id',
-//                     megas: { $first: '$megas' }
-//                 }
-//             },
-//             {
-//                 $project: {
-//                     _id: '$_id',
-//                     megas: '$megas'
-//                 }
-//             },
-//             {
-//                 $sort: {
-//                     _id: -1
-//                 }
-//             }
-//         ]);
-
-//         res.status(200).json({ ok: true, datas });
-//     } catch (error) {
-//         res.status(500).json({ ok: false, error: error.message });
-//     }
-// }
-
-const getMegas = async (req, res) => {
-    const resultado = await Megas.aggregate(  // (1) Padre --- (Categories)
-        [
-            {
-                $lookup:
-                {
-                    from: "perspectiva", // (2) Hijo -- (Publicaciones)
-                    let:{
-                        aliasNombreMega: "$nombre" // (1) Nombre de la categoria [ Tech, Salud]   
-                    },
-                    pipeline: [ // (2)  publicaciones
-                        {
-                            $match:{
-                                $expr:{
-                                    $in: [ "$$aliasNombreMega", "$Megas",]
-                                }
-                            }
-                        }
-                    ],
-                    as: 'listaDePerspectivasEncontradas'
-                }
+exports.megas = async (req, res) => {
+    const { method, body } = req
+    const data = body;
+    console.log('hola')
+    switch (method) {
+        case 'GET':
+            try {
+                console.log('hola')
+                const resultado = await Megas.find()
+                return res.status(200).json(resultado)
+            } catch (err) {
+                return res.status(400).json({ error: err  })
             }
-        ]
-    )
-    console.log('******** RESULTADOS ******', JSON.stringify(resultado));
+
+        case 'POST':
+            if(data){
+                try {
+                    const resultado = await Megas.find()
+                    return res.status(200).json(resultado)
+                } catch (err) {
+                    return res.status(400).json({ error: err  })
+                }
+            }else{
+                return res.status(400).json({ message: validationFailed  })
+            }
+    
+        default:
+            return res.status(500).json({ error: 'method not allowed'  }) 
+    }
 }
 
-module.exports = { getMegas }
 
 
 
