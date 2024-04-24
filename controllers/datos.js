@@ -3,11 +3,10 @@ const Megas = require('../models/megaModel')
 exports.megas = async (req, res) => {
     const { method, body } = req
     const data = body;
-    console.log('hola')
+
     switch (method) {
         case 'GET':
             try {
-                console.log('hola')
                 const resultado = await Megas.find()
                 return res.status(200).json(resultado)
             } catch (err) {

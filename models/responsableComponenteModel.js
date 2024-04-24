@@ -16,9 +16,9 @@ const responsablesData = {
 };
 
 // Insertar los objetos de los Proyectos en la base de datos
-ResponsableComponente.insertMany(responsablesData)
-    .then(() => console.log('Proyectos insertados correctamente'))
-    .catch(error => console.error('Error al insertar Proyectos:', error));
+// ResponsableComponente.insertMany(responsablesData)
+//     .then(() => console.log('Proyectos insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Proyectos:', error));
 
 
     // "Coordinación de Educación Continua",

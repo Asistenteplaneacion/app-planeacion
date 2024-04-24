@@ -10,7 +10,7 @@ const actividadSchema = mongoose.Schema({
 
 const Actividad = mongoose.model('Actividad', actividadSchema);
 
-// Lista de macroactividades de componente
+// Lista de macroactividades de componente}
 const actividadData = {
     nombre: 'Identificar los recursos y/o servicios bibliográficos necesarios por programa académico.',
     periodoEjecucion: {
@@ -18,10 +18,10 @@ const actividadData = {
     }
 };
 
-// Insertar los objetos de los Proyectos en la base de datos
-actividad.insertMany(actividadData)
-    .then(() => console.log('actividad insertados correctamente'))
-    .catch(error => console.error('Error al insertar actividad:', error));
+// // Insertar los objetos de los Proyectos en la base de datos
+// actividad.insertMany(actividadData)
+//     .then(() => console.log('actividad insertados correctamente'))
+//     .catch(error => console.error('Error al insertar actividad:', error));
 
 module.exports = Actividad;
 

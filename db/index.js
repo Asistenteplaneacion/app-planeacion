@@ -1,10 +1,17 @@
 const mongoose = require('mongoose');
                                            // por defecto ya lo busca, no hace falta colocar la extension .js
 
-const dbConnect = (app) =>{
-    mongoose.connect(                                                                           // este "stock-app" es el nombre de la base datos que se creara en MongoDB Atlas
-    `mongodb+srv://apoyoplaneacion:${process.env.MONGO_DB_PASS}@app-planeacion.mxksqyb.mongodb.net/planeacion-data?retryWrites=true&w=majority&appName=app-planeacion`
-    )
+if(!process.env.MONGODB_URL){
+    throw new Error('añadir url en .env')
+}
+
+async function main() {
+    const url = process.env.MONGODB_URL || 'algo'
+    await mongoose.connect(url)
+}
+
+const dbConnect =  (app) => {
+    main()
     .then(( ) => {
         const PORT = process.env.PORT
 
@@ -13,11 +20,23 @@ const dbConnect = (app) =>{
         })
         console.log('Conexión exitosa a la BBDD')
 
-        // Product.updateMany({}, { $set: { deleted: false } }).then((res) =>   //para saber cuantos elementos se eliminaron de la base de datos
-        //     console.log({ res }))
     })
-    .catch((err) => console.log(err))
+    .catch((error)=> console.log(error))
 }
+                                        
+// const dbConnect = (app) =>{
+//     mongoose.connect(process.env.MONGODB_URL)
+    // .then(( ) => {
+    //     const PORT = process.env.PORT
+
+    //     app.listen(PORT, () => {
+    //         console.log(`Servidor escuchando puerto: ${PORT}`)
+    //     })
+    //     console.log('Conexión exitosa a la BBDD')
+
+    // })
+//     .catch((err) => console.log(err))
+// }
 
 module.exports = dbConnect
 

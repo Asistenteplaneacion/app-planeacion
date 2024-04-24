@@ -3,6 +3,8 @@ const express = require('express')
 const cors = require('cors')
 const dbConnect = require('./db/index')
 const DataRouter = require('./routes/datos')
+const dataController = require('./controllers/datos')
+
 // const path = require('path')
 
 
@@ -10,7 +12,9 @@ const app = express()
 
 dbConnect(app)
 
-app.use(cors({ origin: true }))
+app.use(cors())
+
+app.get('/megas', dataController.megas)
 
 app.use(express.json())
 

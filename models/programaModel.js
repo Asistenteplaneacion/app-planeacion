@@ -53,9 +53,9 @@ const programasData ={
     // 'C.CA-5.19. Rutas de Formación y Aprendizaje e Implementación de nuevas modalidades de educación'
 
 // Insertar los objetos de los Programas en la base de datos
-Programa.insertMany(programasData.map(programa => ({ nombre: programa })))
-    .then(() => console.log('Programas insertados correctamente'))
-    .catch(error => console.error('Error al insertar Programas:', error));
+// Programa.insertMany(programasData.map(programa => ({ nombre: programa })))
+//     .then(() => console.log('Programas insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Programas:', error));
 
 
 module.exports = Programa;

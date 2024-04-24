@@ -26,9 +26,9 @@ const proyectosData =
     // Añade aquí los demás proyectos con sus códigos y programas correspondientes
 
 // Insertar los objetos de los Proyectos en la base de datos
-Proyecto.insertMany(proyectosData)
-    .then(() => console.log('Proyectos insertados correctamente'))
-    .catch(error => console.error('Error al insertar Proyectos:', error));
+// Proyecto.insertMany(proyectosData)
+//     .then(() => console.log('Proyectos insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Proyectos:', error));
 
 module.exports = Proyecto;
 

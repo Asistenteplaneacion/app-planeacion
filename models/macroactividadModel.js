@@ -16,8 +16,8 @@ const macroactividadData = {
 };
 
 // Insertar los objetos de los Proyectos en la base de datos
-Macroactividad.insertMany(macroactividadData)
-    .then(() => console.log('Proyectos insertados correctamente'))
-    .catch(error => console.error('Error al insertar Proyectos:', error));
+// Macroactividad.insertMany(macroactividadData)
+//     .then(() => console.log('Proyectos insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Proyectos:', error));
 
 module.exports = Macroactividad;

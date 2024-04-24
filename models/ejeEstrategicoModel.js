@@ -28,9 +28,9 @@ const ejesData =
 
 
 // Insertar los objetos de los Ejes Estratégicos en la base de datos
-Eje.insertMany(ejesData)
-    .then(() => console.log('Ejes Estratégicos insertados correctamente'))
-    .catch(error => console.error('Error al insertar Ejes Estratégicos:', error));
+// Eje.insertMany(ejesData)
+//     .then(() => console.log('Ejes Estratégicos insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Ejes Estratégicos:', error));
 
 
 module.exports = Eje;

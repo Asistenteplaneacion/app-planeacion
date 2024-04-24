@@ -23,9 +23,9 @@ const politicasData = {
 
 
 // Insertar los objetos de las Políticas en la base de datos
-Politica.insertMany(politicasData.map(politica => ({ nombre: politica })))
-    .then(() => console.log('Políticas insertadas correctamente'))
-    .catch(error => console.error('Error al insertar Políticas:', error));
+// Politica.insertMany(politicasData.map(politica => ({ nombre: politica })))
+//     .then(() => console.log('Políticas insertadas correctamente'))
+//     .catch(error => console.error('Error al insertar Políticas:', error));
 
 
 module.exports = Politica;

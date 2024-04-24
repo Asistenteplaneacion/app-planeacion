@@ -29,9 +29,9 @@ const perspectivasData = {
     
 
 // Insertar los objetos de las Perspectivas en la base de datos
-Perspectiva.insertMany(perspectivasData)
-    .then(() => console.log('Perspectivas insertadas correctamente'))
-    .catch(error => console.error('Error al insertar Perspectivas:', error));
+// Perspectiva.insertMany(perspectivasData)
+//     .then(() => console.log('Perspectivas insertadas correctamente'))
+//     .catch(error => console.error('Error al insertar Perspectivas:', error));
 
 
 module.exports = Perspectiva;

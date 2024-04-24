@@ -26,9 +26,9 @@ const objetivosData =
     
 
 // Insertar los objetos de los Objetivos Estratégicos en la base de datos
-ObjetivoEstrategico.insertMany(objetivosData)
-    .then(() => console.log('Objetivos Estratégicos insertados correctamente'))
-    .catch(error => console.error('Error al insertar Objetivos Estratégicos:', error));
+// ObjetivoEstrategico.insertMany(objetivosData)
+//     .then(() => console.log('Objetivos Estratégicos insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Objetivos Estratégicos:', error));
 
 
 module.exports = ObjetivoEstrategico;
