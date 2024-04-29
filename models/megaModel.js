@@ -18,7 +18,7 @@ const megasData = [
     { nombre: 'Mega 4: ', descripcion: 'Creación de Programas de Pregrado Técnico Profesional' },
 ];
 
-// // Insertar los objetos Mega en la base de datos
+// Insertar los objetos Mega en la base de datos
 // Megas.insertMany(megasData)
 //     .then(() => console.log('Megas insertadas correctamente'))
 //     .catch(error => console.error('Error al insertar Megas:', error));

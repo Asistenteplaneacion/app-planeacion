@@ -4,6 +4,7 @@ const cors = require('cors')
 const dbConnect = require('./db/index')
 const DataRouter = require('./routes/datos')
 const dataController = require('./controllers/datos')
+const perspectivaController = require('./controllers/perspectivaController')
 
 // const path = require('path')
 
@@ -14,9 +15,12 @@ dbConnect(app)
 
 app.use(cors())
 
-app.get('/megas', dataController.megas)
+
 
 app.use(express.json())
+
+app.get('/megas', dataController.megas)
+app.get('/perspectiva', perspectivaController.perspectiva)
 
 app.use('/api/v1/datas', DataRouter )
 

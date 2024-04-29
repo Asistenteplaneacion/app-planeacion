@@ -23,7 +23,9 @@ const dbConnect =  (app) => {
     })
     .catch((error)=> console.log(error))
 }
-                                        
+
+module.exports = dbConnect
+
 // const dbConnect = (app) =>{
 //     mongoose.connect(process.env.MONGODB_URL)
     // .then(( ) => {
@@ -38,7 +40,7 @@ const dbConnect =  (app) => {
 //     .catch((err) => console.log(err))
 // }
 
-module.exports = dbConnect
+
 
 // console.log({ module })   // "module" palabra reservada
 
