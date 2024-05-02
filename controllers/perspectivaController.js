@@ -1,35 +1,35 @@
-const Perspectiva = require('../models/perspectivaModel')
+// const Perspectiva = require('../models/perspectivaModel')
 
 
-exports.perspectiva = async (req, res) => {
-    const { method, body } = req
-    const data = body;
+// exports.perspectiva = async (req, res) => {
+//     const { method, body } = req
+//     const data = body;
 
-    switch (method) {
-        case 'GET':
-            try {
-                const resultado = await Perspectiva.find()
-                return res.status(200).json(resultado)
-            } catch (err) {
-                return res.status(400).json({ error: err  })
-            }
+//     switch (method) {
+//         case 'GET':
+//             try {
+//                 const resultado = await Perspectiva.find()
+//                 return res.status(200).json(resultado)
+//             } catch (err) {
+//                 return res.status(400).json({ error: err  })
+//             }
 
-        case 'POST':
-            if(data){
-                try {
-                    const resultado = await Perspectiva.find()
-                    return res.status(200).json(resultado)
-                } catch (err) {
-                    return res.status(400).json({ error: err  })
-                }
-            }else{
-                return res.status(400).json({ message: validationFailed  })
-            }
+//         case 'POST':
+//             if(data){
+//                 try {
+//                     const resultado = await Perspectiva.find()
+//                     return res.status(200).json(resultado)
+//                 } catch (err) {
+//                     return res.status(400).json({ error: err  })
+//                 }
+//             }else{
+//                 return res.status(400).json({ message: validationFailed  })
+//             }
     
-        default:
-            return res.status(500).json({ error: 'method not allowed'  }) 
-    }
-}
+//         default:
+//             return res.status(500).json({ error: 'method not allowed'  }) 
+//     }
+// }
 
 
 

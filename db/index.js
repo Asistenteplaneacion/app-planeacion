@@ -6,7 +6,7 @@ if(!process.env.MONGODB_URL){
 }
 
 async function main() {
-    const url = process.env.MONGODB_URL || 'algo'
+    const url = process.env.MONGODB_URL || 'Error de conexión'
     await mongoose.connect(url)
 }
 

@@ -1,4 +1,4 @@
-const Eje = require('../models/ejeEstrategicoModel');
+// const Eje = require('../models/ejeEstrategicoModel');
 
 
 // const getPerspectiva = async (req, res) => {
@@ -38,33 +38,36 @@ const Eje = require('../models/ejeEstrategicoModel');
 //     }
 // }
 
-const getEje = async () => {
-    const eje = await Eje.aggregate(  // (1) Padre --- (Categories)
-        [
-            {
-                $lookup:
-                {
-                    from: "perspectiva", // (2) Hijo -- (Publicaciones)
-                    let:{
-                        aliasNombreMega: "$nombre" // (1) Nombre de la categoria [ Tech, Salud]   
-                    },
-                    pipeline: [ // (2)  publicaciones
-                        {
-                            $match:{
-                                $expr:{
-                                    $in: [ "$$aliasNombreMega", "$perspectiva",]
-                                }
-                            }
-                        }
-                    ],
-                    as: 'listaDePerspectivasEncontradas'
-                }
-            }
-        ]
-    )
-    console.log('******** RESULTADOS ******', JSON.stringify(eje));
-}
 
-module.exports = {
-    getEje
-};
+
+
+// const getEje = async () => {
+//     const eje = await Eje.aggregate(  // (1) Padre --- (Categories)
+//         [
+//             {
+//                 $lookup:
+//                 {
+//                     from: "perspectiva", // (2) Hijo -- (Publicaciones)
+//                     let:{
+//                         aliasNombreMega: "$nombre" // (1) Nombre de la categoria [ Tech, Salud]   
+//                     },
+//                     pipeline: [ // (2)  publicaciones
+//                         {
+//                             $match:{
+//                                 $expr:{
+//                                     $in: [ "$$aliasNombreMega", "$perspectiva",]
+//                                 }
+//                             }
+//                         }
+//                     ],
+//                     as: 'listaDePerspectivasEncontradas'
+//                 }
+//             }
+//         ]
+//     )
+//     console.log('******** RESULTADOS ******', JSON.stringify(eje));
+// }
+
+// module.exports = {
+//     getEje
+// };

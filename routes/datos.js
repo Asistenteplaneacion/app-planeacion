@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const dataController = require('../controllers/datos')
-const perspectivaController = require('../controllers/perspectivaController')
-const ejeEstrategiController = require('../controllers/ejeEstrategicoController')
+const objetivoEstrategicoController = require('../controllers/objetivoEstrategicoController')
+const politicaController = require('../controllers/politicaController')
+
 
 const app = express()
 
-app.get('/megas', dataController.megas)
-app.get('/perspectiva', perspectivaController.perspectiva)
+app.get('/objetivo', objetivoEstrategicoController.objetivo)
+app.get('/politica', politicaController.politica)
+
+
 // router.get('/', ejeEstrategiController.getEje)
 
 

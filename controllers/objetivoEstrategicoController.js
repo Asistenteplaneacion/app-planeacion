@@ -1,13 +1,13 @@
-const Megas = require('../models/megaModel')
+const Objetivo = require('../models/objetivoEstrategicoModel')
 
-exports.megas = async (req, res) => {
+exports.objetivo = async (req, res) => {
     const { method, body } = req
     const data = body;
 
     switch (method) {
         case 'GET':
             try {
-                const resultado = await Megas.find()
+                const resultado = await Objetivo.find()
                 return res.status(200).json(resultado)
             } catch (err) {
                 return res.status(400).json({ error: err  })
@@ -16,7 +16,7 @@ exports.megas = async (req, res) => {
         case 'POST':
             if(data){
                 try {
-                    const resultado = await Megas.find()
+                    const resultado = await Objetivo.find()
                     return res.status(200).json(resultado)
                 } catch (err) {
                     return res.status(400).json({ error: err  })
@@ -26,7 +26,7 @@ exports.megas = async (req, res) => {
             }
     
         default:
-            return res.status(500).json({ error: 'method not allowed'  }) 
+            return res.status(500).json({ error: 'method not allowed'  })
     }
 }
 
