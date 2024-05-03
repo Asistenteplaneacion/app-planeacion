@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const programaSchema = mongoose.Schema({
     nombre: {type: String, required: true},
-    politica: { type: mongoose.Schema.Types.ObjectId, ref: 'Objetivo', }
 },
 {timestamps: true, versionKey: false}     //una propiedad para que se coloque la fecha
 );

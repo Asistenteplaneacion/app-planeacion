@@ -5,6 +5,7 @@ const dbConnect = require('./db/index')
 const DataRouter = require('./routes/datos')
 const objetivoEstrategicoController = require('./controllers/objetivoEstrategicoController')
 const politicaController = require('./controllers/politicaController')
+const saveDataController = require('./controllers/saveData')
 
 
 // const path = require('path')
@@ -23,6 +24,7 @@ app.use(express.json())
 
 app.get('/objetivo', objetivoEstrategicoController.objetivo)
 app.get('/politica', politicaController.politica)
+app.post('/saveData', saveDataController.SaveData)
 
 
 app.use('/api/v1/datas', DataRouter )

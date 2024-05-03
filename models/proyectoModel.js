@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 // Esquema del Proyecto
 const proyectoSchema = mongoose.Schema({
     nombre: {type: String, required: true},
-    programa: { type: mongoose.Schema.Types.ObjectId, ref: 'Programa', }
+    
 },
 {timestamps: true, versionKey: false}     //una propiedad para que se coloque la fecha
 );

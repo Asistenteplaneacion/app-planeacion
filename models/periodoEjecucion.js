@@ -7,13 +7,13 @@ const PeriodoSchema = mongoose.Schema({
 {timestamps: true, versionKey: false}      //una propiedad para que se coloque la fecha
 )
 
-const Periodo = mongoose.model('Periodo', actividadSchema);
+const Periodo = mongoose.model('Periodo', PeriodoSchema);
 
 // Lista de macroactividades de componente}
 const periodoData = [
-    {periodoEjecucion: 'I Periodo'  },
-    {periodoEjecucion: 'I y II Periodo'  },
-    {periodoEjecucion: 'II Periodo'  },
+    { periodoEjecucion: 'I Periodo'  },
+    { periodoEjecucion: 'I y II Periodo'  },
+    { periodoEjecucion: 'II Periodo'  },
 ]
 
 
