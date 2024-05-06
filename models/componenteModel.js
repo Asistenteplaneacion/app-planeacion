@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const ComponenteSchema = mongoose.Schema({
     codigoComponente: {type: String, required: true},
-    responsable: {type: mongoose.Schema.Types.ObjectId, ref: 'ResponsableComponente'},
-    proyecto: { type: mongoose.Schema.Types.ObjectId, ref: 'Proyecto'}
+    
 },
 {timestamps: true, versionKey: false}      //una propiedad para que se coloque la fecha
 );

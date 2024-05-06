@@ -6,24 +6,30 @@ const DataRouter = require('./routes/datos')
 const objetivoEstrategicoController = require('./controllers/objetivoEstrategicoController')
 const politicaController = require('./controllers/politicaController')
 const saveDataController = require('./controllers/saveData')
+const programaController = require('./controllers/programaController')
+const proyectoController = require('./controllers/proyectoController')
+const componenteController = require('./controllers/componenteController')
+const responsableComponenteController = require('./controllers/responsableComponenteController')
 
 
 // const path = require('path')
-
-
 const app = express()
 
 dbConnect(app)
-
 app.use(cors())
-
-
-
 app.use(express.json())
 
 
 app.get('/objetivo', objetivoEstrategicoController.objetivo)
 app.get('/politica', politicaController.politica)
+app.get('/saveData', saveDataController.SaveData)
+app.get('/programa', programaController.programa)
+app.get('/proyecto', proyectoController.proyecto)
+app.get('/componente', componenteController.componente)
+app.get('/responsableComponente', responsableComponenteController.responsableComponente)
+
+
+
 app.post('/saveData', saveDataController.SaveData)
 
 

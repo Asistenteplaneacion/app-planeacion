@@ -49,9 +49,9 @@ const programasData =[
 
 
 // Insertar los objetos de los Programas en la base de datos
-Programa.insertMany(programasData)
-    .then(() => console.log('Programas insertados correctamente'))
-    .catch(error => console.error('Error al insertar Programas:', error));
+// Programa.insertMany(programasData)
+//     .then(() => console.log('Programas insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Programas:', error));
 
 
 module.exports = Programa;

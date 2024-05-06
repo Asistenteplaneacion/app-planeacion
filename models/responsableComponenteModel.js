@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const responsableComponenteSchema = mongoose.Schema({
     area: {type: String, required: true},
 },
-{timestamps: true, versionKey: false}    //una propiedad para que se coloque la fecha
+{timestamps: true, versionKey: false}  //una propiedad para que se coloque la fecha
 );
 
 const ResponsableComponente = mongoose.model('ResponsableComponente', responsableComponenteSchema);
